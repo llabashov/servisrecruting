@@ -7,14 +7,14 @@ from .models import Recrut, Sith, Planet, Test_of_shadow_hand
 
 def startpage(request):
     """Не работает!!!!"""
-    return render  (request, 'servisrecruting/startpage.html')
-"""
-***MISTAKE***
+    return render(request, 'servisrecruting/startpage.html')
+
+#***MISTAKE***
 def index_siths(request):
-    for_siths = Sith.objects.order_by('sith_Name') #order_by('sith_Name')
+    for_siths = Sith.objects.order_by('sith_Name')
     
     return render(request, 'servisrecruting/for_siths.html', {'for_siths':for_siths})
-"""
+
 def detail_siths(request, sith_id):
     try:
         a = sith.objects.get (id = sith_id )
