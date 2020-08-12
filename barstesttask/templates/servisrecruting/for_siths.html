@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Для Ситхов{% endblock %}
+
+{% block content %}
+
+    {% if for_siths %}
+
+        {% for a in for_siths %}
+
+            <a href="{% url 'servisrecruting:detail_siths' a.id %}">{{a.sith_Name}}</a>
+
+        {% endfor %}
+
+    {% else %}
+        Ситхи не найдены :(
+    {% endif %}
+
+{% endblock %} 
