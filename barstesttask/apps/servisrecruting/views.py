@@ -6,7 +6,6 @@ from django.urls import reverse
 from .models import Recrut, Sith, Planet, Test_of_shadow_hand
 
 def startpage(request):
-    """Не работает!!!!"""
     return render(request, 'servisrecruting/startpage.html')
 
 #***MISTAKE***
