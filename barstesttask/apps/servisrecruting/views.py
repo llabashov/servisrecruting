@@ -9,7 +9,8 @@ def startpage(request):
     return render(request, 'servisrecruting/startpage.html')
 
 def for_siths(request):
-    return render(request, 'servisrecruting/for_siths.html')
+    for_siths = Sith.objects.order_by('sith_Name')
+    return render(request, 'servisrecruting/for_siths.html', {'for_siths':for_siths})
 
 #***MISTAKE***
 def index_siths(request):
