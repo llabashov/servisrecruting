@@ -8,6 +8,9 @@ from .models import Recrut, Sith, Planet, Test_of_shadow_hand
 def startpage(request):
     return render(request, 'servisrecruting/startpage.html')
 
+def for_siths(request):
+    return render(request, 'servisrecruting/for_siths.html')
+
 #***MISTAKE***
 def index_siths(request):
     for_siths = Sith.objects.order_by('sith_Name')
