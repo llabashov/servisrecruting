@@ -9,12 +9,12 @@ def startpage(request):
     return render(request, 'servisrecruting/startpage.html')
 
 def for_siths(request):
-    for_siths = Sith.objects.order_by('sith_Name')
+    for_siths = Sith.objects.order_by('sith_name')
     return render(request, 'servisrecruting/for_siths.html', {'for_siths':for_siths})
 
 #***MISTAKE***
 def index_siths(request):
-    for_siths = Sith.objects.order_by('sith_Name')
+    for_siths = Sith.objects.order_by('sith_name')
     
     return render(request, 'servisrecruting/for_siths.html', {'for_siths':for_siths})
 
