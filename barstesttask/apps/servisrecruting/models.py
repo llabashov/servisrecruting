@@ -3,6 +3,8 @@ from django.db import models
 
 class Planet(models.Model):
     planet_name = models.CharField('Название Планеты', max_length = 50)
+    siths_in_mtm = models.ManyToManyField('Sith', blank=False, related_name='planets')
+    recruts_in_mtm = models.ManyToManyField('Recrut', blank=False, related_name='recruts')
 
     def __str__(self):
         return self.planet_name
@@ -12,7 +14,7 @@ class Planet(models.Model):
         verbose_name_plural = 'Планеты'   
 
 class Sith(models.Model):
-    planet = models.ForeignKey(Planet, on_delete = models.CASCADE)
+    #planet = models.ForeignKey(Planet, on_delete = models.CASCADE)
     sith_name = models.CharField('Имя Ситха', max_length = 50)
     sith_planet = models.CharField('Планета обучения', max_length = 50)
     shadow_hand = 0
@@ -49,8 +51,8 @@ class Recrut(models.Model):
     recrut_planet = models.CharField('Планета обитания', max_length = 50)
     recrut_age = models.CharField('Возраст', max_length = 50)
     recrut_email = models.EmailField('Email', max_length = 254)
-    recrut = models.ForeignKey(Planet, on_delete = models.CASCADE)
-    recrut_shadow_hand = 0
+   # recrut = models.ForeignKey(Planet, on_delete = models.CASCADE)
+   # recrut_shadow_hand = 0
 
     def __str__(self):
         return self.recrut_name
