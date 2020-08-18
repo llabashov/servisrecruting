@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block titke %}
+        Recrut Create - {{ block.super }}
+{% endblock titke %}
+
+
+{% block content %}
+
+    <form action="{% url 'recrut_create_url' %}" method="post">
+        {% csrf_token %}
+        {{ form.recrut_name }}
+        {{ form.recrut_planet }}
+        {{ form.recrut_age }}
+        {{ form.recrut_email }}
+
+        <button type="submit">Create Recrut</button>
+    </form>
+
+{% endblock content %}
+    

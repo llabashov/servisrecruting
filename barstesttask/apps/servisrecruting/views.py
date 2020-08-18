@@ -1,9 +1,11 @@
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
+from django.views.generic import View
 
 from django.urls import reverse
 
 from .models import Recrut, Sith, Planet, Test_of_shadow_hand
+from .forms import RecrutForm
 
 def startpage(request):
     return render(request, 'servisrecruting/startpage.html')
@@ -34,3 +36,8 @@ def recruts_without_shadow_hand(request, recrut_id):
     a.recrut_set.create(recrut_Name = request.POST['recrut_Name'], recrut_Age = request.POST['recrut_Age'] )
 
     return HttpResponseRedirect (reverse('sith:detail', args = (a.id,)) )
+
+class RecrutCreate(View):
+    def get(self, request):
+        form = RecrutForm()
+        return render (request, 'servisrecruting/recrut_create.html', context={'form': form})
