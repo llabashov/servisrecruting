@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Planet(models.Model):
     planet_name = models.CharField('Название Планеты', max_length = 50)
 
@@ -12,8 +13,8 @@ class Planet(models.Model):
 
 class Sith(models.Model):
     planet = models.ForeignKey(Planet, on_delete = models.CASCADE)
-    sith_Name = models.CharField('Имя Ситха', max_length = 50)
-    sith_Planet = models.CharField('Планета обучения', max_length = 50)
+    sith_name = models.CharField('Имя Ситха', max_length = 50)
+    sith_planet = models.CharField('Планета обучения', max_length = 50)
     shadow_hand = 0
     
     def __str__(self):
@@ -44,15 +45,15 @@ class Test_of_shadow_hand(models.Model):
         verbose_name_plural = 'Испытания Руки Тени'
 
 class Recrut(models.Model):
-    recrut_Name = models.CharField('Имя Рекрута', max_length = 50)
-    recrut_Planet = models.CharField('Планета обитания', max_length = 50)
-    recrut_Age = models.CharField('Возраст', max_length = 50)
-    recrut_Email = models.EmailField('Email', max_length = 254)
+    recrut_name = models.CharField('Имя Рекрута', max_length = 50)
+    recrut_planet = models.CharField('Планета обитания', max_length = 50)
+    recrut_age = models.CharField('Возраст', max_length = 50)
+    recrut_email = models.EmailField('Email', max_length = 254)
     recrut = models.ForeignKey(Planet, on_delete = models.CASCADE)
-    recrut_Shadow_hand = 0
+    recrut_shadow_hand = 0
 
     def __str__(self):
-        return self.recrut_Name
+        return self.recrut_name
 
     class Meta:
         verbose_name = 'Рекрут'
