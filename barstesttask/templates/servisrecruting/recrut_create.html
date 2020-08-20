@@ -8,7 +8,7 @@
 
 {% block content %}
 
-    <form action="{% url 'recrut_create_url' %}" method="post">
+    <form action="{% url 'servisrecruting:recrut_create_url' %}" method="post">
         {% csrf_token %}
         {{ form.recrut_name }}
         {{ form.recrut_planet }}
