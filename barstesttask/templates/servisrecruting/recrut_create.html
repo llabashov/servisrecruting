@@ -7,7 +7,7 @@
 
 
 {% block content %}
-
+    <h1>Введи свои данные, рекрут:</h1>
     <form action="{% url 'servisrecruting:recrut_create_url' %}" method="post">
         {% csrf_token %}
 
