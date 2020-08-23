@@ -5,8 +5,13 @@
 {% endblock %}
 
 {% block content %}
+
+{% for recrut in Recrut %}
+    
+{% endfor %}
+    
 <h5>Звезда обитания - {{Sith.sith_planet}}</h5>
-<form action="{%url 'servisrecruting:recruts_without_shadow_hand' sith.id %}" method="POST">
+<form action="{%url 'servisrecruting:recruts_without_shadow_hand_url' sith.id %}" method="POST">
 
     {% csrf_token %}
     

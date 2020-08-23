@@ -6,15 +6,15 @@
 
     {% if for_siths %}
         <h1 class="mb-5">Выбери себя, Ситх!</h1>
-        {% for a in for_siths %}
+        {% for sith in for_siths %}
             <div class="card">
                 <div class="card-header">
-                    <h4>{{a.sith_name}}</h4>
+                    <h4>{{sith.sith_name}}</h4>
                 </div>
                 <div class="card-body">
-                    <h7 class="card-title">Планета обитания: {{a.sith_planet}}</h7>
-                    <p class="card-text">Конечностей смерти: {{a.shadow_hand}}</p>
-                    <a href="#" class="btn btn-dark">Выбрать себя</a>
+                    <h7 class="card-title">Планета обитания: {{sith.sith_planet}}</h7>
+                    <p class="card-text">Конечностей смерти: {{sith.shadow_hand}}</p>
+                    <a href="{% url 'servisrecruting:detail_siths_url' sith_name=sith.sith_name %}" class="btn btn-dark">Выбрать себя</a>
                 </div>
             </div>
 

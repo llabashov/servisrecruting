@@ -12,17 +12,12 @@ def startpage(request):
 
 def for_siths(request):
     for_siths = Sith.objects.order_by('id')
+    #sith_name = Sith.objects.get(sith_name__iexact=sith_name)
     return render(request, 'servisrecruting/for_siths.html', context={'for_siths':for_siths})
-
-#***MISTAKE***
-def index_siths(request):
-    for_siths = Sith.objects.order_by('sith_name')
-    
-    return render(request, 'servisrecruting/for_siths.html', {'for_siths':for_siths})
 
 def detail_siths(request, sith_name):
     try:
-        sith = sith.objects.get ( sith_name__iexact = sith_name )
+        sith = Sith.objects.get(sith_name__iexact=sith_name)
     except:
         raise Http404 ("Ситх не найден!")
     return render(request, 'servisrecruting/detail_siths.html' , context={'sith': sith})
