@@ -1,21 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}{{sith.sith_Name}}{% endblock %}
+{% block title %}
+    {{ Sith.sith_Name }}
+{% endblock %}
 
 {% block content %}
-
-<h2>{{sith.sith_Name}}</h2>
-
-<p>{{sith.sith_Name}}</p>
-
-<em>{{sith.sith_Name}}</em>
-
-<hr>
-
-
-
-<hr>
-
+<h5>Звезда обитания - {{Sith.sith_planet}}</h5>
 <form action="{%url 'servisrecruting:recruts_without_shadow_hand' sith.id %}" method="POST">
 
     {% csrf_token %}

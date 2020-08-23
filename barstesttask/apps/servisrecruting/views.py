@@ -11,8 +11,8 @@ def startpage(request):
     return render(request, 'servisrecruting/startpage.html')
 
 def for_siths(request):
-    for_siths = Sith.objects.order_by('sith_name')
-    return render(request, 'servisrecruting/for_siths.html', {'for_siths':for_siths})
+    for_siths = Sith.objects.order_by('id')
+    return render(request, 'servisrecruting/for_siths.html', context={'for_siths':for_siths})
 
 #***MISTAKE***
 def index_siths(request):
@@ -20,12 +20,12 @@ def index_siths(request):
     
     return render(request, 'servisrecruting/for_siths.html', {'for_siths':for_siths})
 
-def detail_siths(request, sith_id):
+def detail_siths(request, sith_name):
     try:
-        a = sith.objects.get (id = sith_id )
+        sith = sith.objects.get ( sith_name__iexact = sith_name )
     except:
         raise Http404 ("Ситх не найден!")
-    return render(request, 'servisrecruting/detail_siths.html' , {'sith': a})
+    return render(request, 'servisrecruting/detail_siths.html' , context={'sith': sith})
 
 def recruts_without_shadow_hand(request, recrut_id):
     try:

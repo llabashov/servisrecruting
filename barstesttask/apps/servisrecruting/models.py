@@ -20,7 +20,7 @@ class Sith(models.Model):
     shadow_hand = 0
     
     def __str__(self):
-        return self.sith_Name
+        return self.sith_name
 
     def sith_shadow_hand(self, shadow_hand):
         #if Sith 
